@@ -1,0 +1,14 @@
+{
+  "name": "pdf-tools-backend",
+  "version": "1.0.0",
+  "description": "Backend Lambda functions for PDF Tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1692.0"
+  },
+  "author": "SnapIT Software",
+  "license": "MIT"
+}

@@ -1,0 +1,127 @@
+service: pdf-tools
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: us-east-1
+  stage: ${opt:stage, 'prod'}
+
+  environment:
+    SUBSCRIPTIONS_TABLE: pdf-tools-subscriptions
+    USAGE_TABLE: pdf-tools-usage
+    STRIPE_SECRET_KEY: ${ssm:/pdf-tools/stripe-secret-key~true}
+    STRIPE_WEBHOOK_SECRET: ${ssm:/pdf-tools/stripe-webhook-secret~true}
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.SUBSCRIPTIONS_TABLE}
+            - arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.USAGE_TABLE}
+        - Effect: Allow
+          Action:
+            - ssm:GetParameter
+            - ssm:GetParameters
+          Resource:
+            - arn:aws:ssm:${self:provider.region}:*:parameter/pdf-tools/*
+
+functions:
+  checkSubscription:
+    handler: backend/checkSubscription.handler
+    events:
+      - http:
+          path: users/{userId}/subscription
+          method: get
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - Authorization
+            allowCredentials: false
+    description: Check user's subscription plan and usage limits
+
+  trackUsage:
+    handler: backend/trackUsage.handler
+    events:
+      - http:
+          path: users/{userId}/usage
+          method: post
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - Authorization
+            allowCredentials: false
+    description: Track PDF processing usage and enforce limits
+
+  stripeWebhook:
+    handler: backend/stripeWebhook.handler
+    events:
+      - http:
+          path: webhooks/stripe
+          method: post
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - Stripe-Signature
+            allowCredentials: false
+    description: Handle Stripe webhook events for subscriptions
+
+resources:
+  Resources:
+    UsageTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.USAGE_TABLE}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: date
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+          - AttributeName: date
+            KeyType: RANGE
+        TimeToLiveSpecification:
+          Enabled: true
+          AttributeName: ttl
+        Tags:
+          - Key: Service
+            Value: PDF-Tools
+          - Key: Environment
+            Value: ${self:provider.stage}
+
+    SubscriptionsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.SUBSCRIPTIONS_TABLE}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+        Tags:
+          - Key: Service
+            Value: PDF-Tools
+          - Key: Environment
+            Value: ${self:provider.stage}
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 3010

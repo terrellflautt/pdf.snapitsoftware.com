@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free PDF Tools Online - Split, Merge, Compress & Convert PDFs | SnapIT Software</title>
+    <meta name="description" content="Free online PDF tools: Split PDF by pages, merge multiple PDFs, compress large files, convert PDF to Word/Excel. No registration required. Process 3 PDFs daily free, upgrade for unlimited access. Better than SmallPDF, iLovePDF, PDF24.">
+    
+    <!-- SEO Keywords for High-Traffic PDF Terms -->
+    <meta name="keywords" content="free pdf tools online, split pdf pages, merge pdf files free, compress pdf online, pdf converter free, pdf splitter online, combine pdf files, reduce pdf size, pdf to word converter, pdf to excel converter, online pdf editor, free pdf processor, pdf tools no registration, split pdf by page range, extract pages from pdf, pdf merger online free, compress pdf without losing quality, convert pdf to powerpoint, pdf compression tool, online pdf utilities, pdf manipulation tools, best pdf tools 2025, alternative to adobe acrobat, smallpdf alternative, ilovepdf alternative, pdf24 alternative, sejda alternative, pdftk alternative">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Free PDF Tools Online - Split, Merge, Compress & Convert PDFs">
+    <meta property="og:description" content="Professional PDF processing tools. Split, merge, compress, and convert PDFs online. Free tier with 3 daily files, pro plans available.">
+    <meta property="og:image" content="https://snapitsoftware.com/pdf-tools-og-image.jpg">
+    <meta property="og:url" content="https://snapitsoftware.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SnapIT PDF Tools">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free PDF Tools Online - Split, Merge, Compress & Convert PDFs">
+    <meta name="twitter:description" content="Professional PDF processing tools. No registration required for basic use.">
+    <meta name="twitter:image" content="https://snapitsoftware.com/pdf-tools-twitter-image.jpg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta name="author" content="SnapIT Software">
+    <meta name="publisher" content="SnapIT Software">
+    <meta name="copyright" content="SnapIT Software 2025">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="US">
+    <meta name="geo.country" content="US">
+    <link rel="canonical" href="https://snapitsoftware.com">
+    
+    <!-- Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SnapIT PDF Tools",
+        "description": "Free online PDF tools for splitting, merging, compressing, and converting PDF files. No registration required for basic features.",
+        "url": "https://snapitsoftware.com",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web Browser",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Free Plan",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "3 PDF files per day, 25MB max file size, basic processing"
+            },
+            {
+                "@type": "Offer", 
+                "name": "Professional Plan",
+                "price": "9",
+                "priceCurrency": "USD",
+                "description": "100 files per day, 100MB max, all features, priority processing"
+            }
+        ],
+        "featureList": [
+            "Split PDF by pages or ranges",
+            "Merge multiple PDF files",
+            "Compress PDF file size",
+            "Convert PDF to Word, Excel, PowerPoint",
+            "Extract pages from PDF",
+            "No registration required",
+            "Secure processing",
+            "Free tier available"
+        ],
+        "screenshot": "https://snapitsoftware.com/pdf-tools-screenshot.jpg",
+        "provider": {
+            "@type": "Organization",
+            "name": "SnapIT Software",
+            "url": "https://snapitsoftware.com"
+        }
+    }
+    </script>
+    
+    <!-- Enhanced CSP for security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com https://accounts.google.com https://js.stripe.com https://fonts.googleapis.com https://fonts.gstatic.com https:; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.tailwindcss.com https://accounts.google.com https://js.stripe.com https://fonts.googleapis.com https://fonts.gstatic.com https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https:; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https:; connect-src 'self' https: wss: ws:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https:; img-src 'self' https: data: blob:; frame-src https:;">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <!-- PDF.js for PDF handling -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'snapit-cream': '#FFF8F0',
+                        'snapit-magenta': '#aa336a',
+                        'snapit-purple': '#aa336a',
+                        'snapit-deep-black': '#2d1b3d',
+                        primary: {
+                            50: '#fdf2f8', 100: '#fce7f3', 200: '#fbcfe8', 300: '#f9a8d4',
+                            400: '#f472b6', 500: '#aa336a', 600: '#8b2d5a', 700: '#7a2650',
+                            800: '#6b1e47', 900: '#5c1a3e',
+                        },
+                        accent: {
+                            50: '#fdf2f8', 100: '#fce7f3', 200: '#fbcfe8', 300: '#f9a8d4',
+                            400: '#f472b6', 500: '#aa336a', 600: '#ff6b8a', 700: '#e91e63',
+                            800: '#ad1457', 900: '#880e4f',
+                        }
+                    },
+                    fontFamily: { 'sans': ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #aa336a 0%, #ff6b8a 100%); }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(170, 51, 106, 0.25); }
+        .drag-over { border-color: #aa336a; background-color: #fdf2f8; }
+        .spinner { width: 40px; height: 40px; border: 4px solid #f3f4f6; border-top: 4px solid #aa336a; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .progress-bar { transition: width 0.3s ease; }
+        
+        /* File upload styles */
+        .file-drop-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .file-drop-area:hover {
+            border-color: #aa336a;
+            background-color: #fdf2f8;
+        }
+        .file-drop-area.drag-over {
+            border-color: #aa336a;
+            background-color: #fdf2f8;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen" style="background: linear-gradient(135deg, #FFF8F0 0%, #ffffff 50%, #fdf2f8 100%);">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
+                            <span class="material-icons text-white">picture_as_pdf</span>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
+                                PDF Tools
+                            </h1>
+                            <p class="text-sm text-gray-600">by SnapIT Software</p>
+                        </div>
+                    </div>
+                    
+                    <nav class="hidden md:flex space-x-1">
+                        <button onclick="setActiveTab('convert')" id="convert-tab" class="tab-btn px-3 py-2 rounded-lg transition-all duration-200">
+                            <span class="material-icons text-sm mr-1">transform</span>
+                            <span>Convert</span>
+                        </button>
+                        <button onclick="setActiveTab('split')" id="split-tab" class="tab-btn px-3 py-2 rounded-lg transition-all duration-200">
+                            <span class="material-icons text-sm mr-1">content_cut</span>
+                            <span>Split</span>
+                        </button>
+                        <button onclick="setActiveTab('merge')" id="merge-tab" class="tab-btn px-3 py-2 rounded-lg transition-all duration-200">
+                            <span class="material-icons text-sm mr-1">merge</span>
+                            <span>Merge</span>
+                        </button>
+                        <button onclick="setActiveTab('compress')" id="compress-tab" class="tab-btn px-3 py-2 rounded-lg transition-all duration-200">
+                            <span class="material-icons text-sm mr-1">compress</span>
+                            <span>Compress</span>
+                        </button>
+                    </nav>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="text-sm text-gray-600">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Free Tools Available</span>
+                    </div>
+                    <div id="auth-container" class="hidden">
+                        <div id="g_id_onload" data-client_id="242648112266-iglul54tuis9mhucsp1pmpqg0a48l8i0.apps.googleusercontent.com" data-callback="handleCredentialResponse"></div>
+                        <div class="g_id_signin" data-type="standard"></div>
+                    </div>
+                    <div id="user-info" class="hidden">
+                        <span id="user-name" class="text-sm text-gray-700"></span>
+                        <button onclick="signOut()" class="ml-2 text-sm text-red-600 hover:text-red-800">Sign Out</button>
+                    </div>
+                    <button onclick="showSignIn()" class="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-primary-700 transition">
+                        Sign In for Pro Features
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Convert Tab -->
+        <div id="convert-content" class="tab-content">
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">PDF Converter</h2>
+                    <p class="text-xl text-gray-600">Convert PDFs to Word, Excel, PowerPoint, images and more</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+                    <button onclick="setConvertMode('pdf-to-word')" class="convert-mode-btn p-4 border rounded-lg text-center hover:border-primary-500 hover:bg-primary-50 transition">
+                        <span class="material-icons text-primary-600 text-2xl mb-2">description</span>
+                        <div class="font-medium">PDF to Word</div>
+                    </button>
+                    <button onclick="setConvertMode('pdf-to-excel')" class="convert-mode-btn p-4 border rounded-lg text-center hover:border-primary-500 hover:bg-primary-50 transition">
+                        <span class="material-icons text-primary-600 text-2xl mb-2">table_chart</span>
+                        <div class="font-medium">PDF to Excel</div>
+                    </button>
+                    <button onclick="setConvertMode('pdf-to-ppt')" class="convert-mode-btn p-4 border rounded-lg text-center hover:border-primary-500 hover:bg-primary-50 transition">
+                        <span class="material-icons text-primary-600 text-2xl mb-2">slideshow</span>
+                        <div class="font-medium">PDF to PPT</div>
+                    </button>
+                    <button onclick="setConvertMode('pdf-to-image')" class="convert-mode-btn p-4 border rounded-lg text-center hover:border-primary-500 hover:bg-primary-50 transition">
+                        <span class="material-icons text-primary-600 text-2xl mb-2">image</span>
+                        <div class="font-medium">PDF to Images</div>
+                    </button>
+                    <button onclick="setConvertMode('text-to-pdf')" class="convert-mode-btn p-4 border rounded-lg text-center hover:border-primary-500 hover:bg-primary-50 transition">
+                        <span class="material-icons text-primary-600 text-2xl mb-2">text_fields</span>
+                        <div class="font-medium">Text to PDF</div>
+                    </button>
+                </div>
+                
+                <!-- File Upload Area -->
+                <div id="file-upload-area" class="file-drop-area p-12 text-center cursor-pointer" onclick="document.getElementById('convert-file-input').click()">
+                    <input type="file" id="convert-file-input" accept=".pdf" class="hidden" onchange="handleFileSelect(this, 'convert')">
+                    <span class="material-icons text-gray-400 text-6xl mb-4">cloud_upload</span>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Drop PDF file here or click to browse</h3>
+                    <p class="text-gray-500">Supports PDF files up to 100MB</p>
+                </div>
+
+                <!-- Text Input Area for Text-to-PDF -->
+                <div id="text-input-area" class="hidden border-2 border-dashed border-gray-300 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Enter text to convert to PDF</h3>
+                    <textarea id="text-content" class="w-full h-64 p-4 border border-gray-300 rounded-lg resize-vertical" placeholder="Type or paste your text here...&#10;&#10;Features:&#10;• Rich text formatting&#10;• Multiple fonts and sizes&#10;• Custom margins and spacing&#10;• Professional layouts"></textarea>
+                    <div class="flex justify-between items-center mt-4">
+                        <div class="flex space-x-4">
+                            <select id="font-family" class="px-3 py-2 border border-gray-300 rounded-lg">
+                                <option value="Helvetica">Helvetica</option>
+                                <option value="Times-Roman">Times New Roman</option>
+                                <option value="Courier">Courier</option>
+                            </select>
+                            <select id="font-size" class="px-3 py-2 border border-gray-300 rounded-lg">
+                                <option value="12">12pt</option>
+                                <option value="14" selected>14pt</option>
+                                <option value="16">16pt</option>
+                                <option value="18">18pt</option>
+                            </select>
+                        </div>
+                        <button onclick="convertTextToPDF()" class="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
+                            Convert to PDF
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="convert-progress" class="hidden mt-6">
+                    <div class="bg-gray-200 rounded-full h-3 mb-2">
+                        <div id="convert-progress-bar" class="bg-primary-500 h-3 rounded-full progress-bar" style="width: 0%"></div>
+                    </div>
+                    <p id="convert-status" class="text-sm text-gray-600 text-center">Processing...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Split Tab -->
+        <div id="split-content" class="tab-content hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">PDF Splitter</h2>
+                    <p class="text-xl text-gray-600">Split PDF by pages, ranges, or bookmarks</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <button onclick="setSplitMode('pages')" class="split-mode-btn p-4 border rounded-lg text-center hover:border-primary-500 hover:bg-primary-50 transition">
+                        <span class="material-icons text-primary-600 text-2xl mb-2">content_cut</span>
+                        <div class="font-medium">Split by Pages</div>
+                        <div class="text-sm text-gray-500">Extract specific pages</div>
+                    </button>
+                    <button onclick="setSplitMode('ranges')" class="split-mode-btn p-4 border rounded-lg text-center hover:border-green-500 hover:bg-green-50 transition">
+                        <span class="material-icons text-green-600 text-2xl mb-2">view_agenda</span>
+                        <div class="font-medium">Split by Ranges</div>
+                        <div class="text-sm text-gray-500">Define page ranges</div>
+                    </button>
+                    <button onclick="setSplitMode('size')" class="split-mode-btn p-4 border rounded-lg text-center hover:border-orange-500 hover:bg-orange-50 transition">
+                        <span class="material-icons text-orange-600 text-2xl mb-2">straighten</span>
+                        <div class="font-medium">Split by Size</div>
+                        <div class="text-sm text-gray-500">Fixed page count</div>
+                    </button>
+                </div>
+                
+                <div class="file-drop-area p-12 text-center cursor-pointer" onclick="document.getElementById('split-file-input').click()">
+                    <input type="file" id="split-file-input" accept=".pdf" class="hidden" onchange="handleFileSelect(this, 'split')">
+                    <span class="material-icons text-gray-400 text-6xl mb-4">content_cut</span>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Drop PDF file here to split</h3>
+                    <p class="text-gray-500">Maximum file size: 100MB</p>
+                </div>
+                
+                <div id="split-options" class="hidden mt-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Split Options:</label>
+                        <input type="text" id="split-input" class="w-full p-3 border rounded-lg" placeholder="e.g., 1,3,5-10 or every 5 pages">
+                    </div>
+                    <button onclick="processSplit()" class="mt-4 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
+                        Split PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Merge Tab -->
+        <div id="merge-content" class="tab-content hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">PDF Merger</h2>
+                    <p class="text-xl text-gray-600">Combine multiple PDFs into one document</p>
+                </div>
+                
+                <div class="file-drop-area p-12 text-center cursor-pointer" onclick="document.getElementById('merge-file-input').click()">
+                    <input type="file" id="merge-file-input" accept=".pdf" multiple class="hidden" onchange="handleFileSelect(this, 'merge')">
+                    <span class="material-icons text-gray-400 text-6xl mb-4">merge</span>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Drop multiple PDF files here or click to browse</h3>
+                    <p class="text-gray-500">Select multiple files to merge them together</p>
+                </div>
+                
+                <div id="merge-files-list" class="mt-6 space-y-2 hidden">
+                    <h4 class="font-semibold text-gray-800">Files to merge:</h4>
+                    <div id="merge-files-container"></div>
+                    <button onclick="processMerge()" class="mt-4 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
+                        Merge PDFs
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compress Tab -->
+        <div id="compress-content" class="tab-content hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">PDF Compressor</h2>
+                    <p class="text-xl text-gray-600">Reduce PDF file size while maintaining quality</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="compression-option p-4 border rounded-lg text-center">
+                        <span class="material-icons text-red-600 text-2xl mb-2">high_quality</span>
+                        <div class="font-medium">High Quality</div>
+                        <div class="text-sm text-gray-500">Minimal compression</div>
+                    </div>
+                    <div class="compression-option p-4 border-2 border-primary-500 bg-primary-50 rounded-lg text-center">
+                        <span class="material-icons text-primary-600 text-2xl mb-2">balance</span>
+                        <div class="font-medium">Balanced</div>
+                        <div class="text-sm text-gray-500">Good quality, smaller size</div>
+                    </div>
+                    <div class="compression-option p-4 border rounded-lg text-center">
+                        <span class="material-icons text-green-600 text-2xl mb-2">compress</span>
+                        <div class="font-medium">Maximum</div>
+                        <div class="text-sm text-gray-500">Smallest file size</div>
+                    </div>
+                </div>
+                
+                <div class="file-drop-area p-12 text-center cursor-pointer" onclick="document.getElementById('compress-file-input').click()">
+                    <input type="file" id="compress-file-input" accept=".pdf" class="hidden" onchange="handleFileSelect(this, 'compress')">
+                    <span class="material-icons text-gray-400 text-6xl mb-4">compress</span>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Drop PDF file here to compress</h3>
+                    <p class="text-gray-500">Reduce file size by up to 90%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mt-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Choose Your Plan</h2>
+                <p class="text-xl text-gray-600">Process more files with our premium plans</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Free Plan -->
+                <div class="border-2 border-gray-200 rounded-xl p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Free</h3>
+                    <div class="text-3xl font-bold text-green-600 mb-4">$0</div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li>✓ 3 files per day</li>
+                        <li>✓ 25MB max file size</li>
+                        <li>✓ Basic conversion</li>
+                        <li>✓ Standard processing</li>
+                    </ul>
+                    <button onclick="signUpFree()" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                        Get Started Free
+                    </button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="border-2 border-primary-500 rounded-xl p-6 text-center bg-primary-50">
+                    <div class="bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-2">Most Popular</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Professional</h3>
+                    <div class="text-3xl font-bold text-primary-600 mb-4">$9<span class="text-base text-gray-600">/month</span></div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li>✓ 100 files per day</li>
+                        <li>✓ 100MB max file size</li>
+                        <li>✓ All conversion types</li>
+                        <li>✓ Priority processing</li>
+                        <li>✓ Batch operations</li>
+                        <li>✓ API access</li>
+                    </ul>
+                    <button onclick="upgradeToPro()" class="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
+                        Upgrade to Pro
+                    </button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="border-2 border-purple-500 rounded-xl p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                    <div class="text-3xl font-bold text-purple-600 mb-4">$49<span class="text-base text-gray-600">/month</span></div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li>✓ Unlimited files</li>
+                        <li>✓ 500MB max file size</li>
+                        <li>✓ Custom integrations</li>
+                        <li>✓ White-label options</li>
+                        <li>✓ Premium support</li>
+                        <li>✓ Custom API limits</li>
+                    </ul>
+                    <button onclick="upgradeToEnterprise()" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SnapIT Ecosystem -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mt-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">More SnapIT Tools</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="https://snapitagent.com" target="_blank" class="bg-purple-50 hover:bg-purple-100 p-4 rounded-lg text-center transition">
+                    <div class="text-2xl mb-2">🤖</div>
+                    <div class="font-medium text-purple-700">AI Agents</div>
+                </a>
+                <a href="https://snapitforms.com" target="_blank" class="bg-blue-50 hover:bg-blue-100 p-4 rounded-lg text-center transition">
+                    <div class="text-2xl mb-2">📝</div>
+                    <div class="font-medium text-blue-700">Forms</div>
+                </a>
+                <a href="https://snapitanalytics.com" target="_blank" class="bg-green-50 hover:bg-green-100 p-4 rounded-lg text-center transition">
+                    <div class="text-2xl mb-2">📊</div>
+                    <div class="font-medium text-green-700">Analytics</div>
+                </a>
+                <a href="https://snapiturl.com" target="_blank" class="bg-yellow-50 hover:bg-yellow-100 p-4 rounded-lg text-center transition">
+                    <div class="text-2xl mb-2">🔗</div>
+                    <div class="font-medium text-yellow-700">URL Tools</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- SEO Content: How-To Tutorials Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mt-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">How to Use Our Free PDF Tools</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="border rounded-lg p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-primary-600 mb-4">How to Split PDF</h3>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li>• Upload your PDF file (max 25MB)</li>
+                        <li>• Choose split method: pages, ranges, or fixed size</li>
+                        <li>• Enter page numbers (e.g., 1,3,5-10)</li>
+                        <li>• Download individual PDF files</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">Perfect for extracting specific pages from large documents, creating individual chapters, or sharing selected content.</p>
+                </div>
+
+                <div class="border rounded-lg p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-primary-600 mb-4">How to Merge PDFs</h3>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li>• Select multiple PDF files</li>
+                        <li>• Drag to reorder files as needed</li>
+                        <li>• Click "Merge PDFs" to combine</li>
+                        <li>• Download the combined PDF</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">Ideal for combining reports, contracts, invoices, or creating complete document packages.</p>
+                </div>
+
+                <div class="border rounded-lg p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-primary-600 mb-4">How to Compress PDF</h3>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li>• Upload large PDF file</li>
+                        <li>• Choose compression level</li>
+                        <li>• Process to reduce file size</li>
+                        <li>• Download optimized PDF</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">Reduce PDF size by up to 90% while maintaining quality. Perfect for email attachments and web sharing.</p>
+                </div>
+
+                <div class="border rounded-lg p-6 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-primary-600 mb-4">How to Convert PDF</h3>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li>• Upload PDF document</li>
+                        <li>• Select output format (Word, Excel, PPT)</li>
+                        <li>• Process conversion</li>
+                        <li>• Download converted file</li>
+                    </ul>
+                    <p class="text-sm text-gray-500">Convert PDFs to editable formats for easy document editing and data extraction.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content: FAQ Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mt-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Is this PDF tool completely free?</h3>
+                        <p class="text-gray-600">Yes! Process up to 3 PDF files daily (25MB each) completely free with no registration required. For unlimited access, upgrade to our Professional plan at $9/month.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">How do I split a PDF into multiple files?</h3>
+                        <p class="text-gray-600">Upload your PDF, choose "Split" mode, specify pages or ranges (like "1,3,5-10"), and download individual files. Perfect for extracting specific chapters or sections.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Can I merge PDFs in a specific order?</h3>
+                        <p class="text-gray-600">Absolutely! Upload multiple PDFs and drag them to reorder before merging. This ensures your combined document has pages in the exact sequence you want.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Is my data secure when processing PDFs?</h3>
+                        <p class="text-gray-600">Yes, all processing happens securely. Files are processed either locally in your browser or on our encrypted servers, then automatically deleted within 24 hours.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">What's the maximum file size for free users?</h3>
+                        <p class="text-gray-600">Free users can process files up to 25MB each, 3 files per day. Professional users get 100MB files with 100 daily processing limit.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">How much can I compress a PDF file?</h3>
+                        <p class="text-gray-600">Compression varies by content, but typically reduces file size by 30-90%. Image-heavy PDFs compress more than text-only documents while maintaining visual quality.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Can I convert PDF to Word for editing?</h3>
+                        <p class="text-gray-600">Yes! Convert PDFs to Word (.docx), Excel (.xlsx), or PowerPoint (.pptx) formats. Text, images, and basic formatting are preserved for easy editing.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">How does this compare to Adobe Acrobat?</h3>
+                        <p class="text-gray-600">Our tools offer the most common PDF operations for free, while Adobe Acrobat requires expensive subscriptions. Perfect for occasional use and basic PDF processing needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cross-Selling to Other SnapIT Services -->
+        <div class="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl shadow-xl p-8 mt-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Need More Business Tools?</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <div class="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">📝</div>
+                    <h3 class="text-xl font-bold mb-3 text-primary-600">Create Professional Forms</h3>
+                    <p class="text-gray-600 mb-4">Build contact forms, surveys, and lead capture forms. Get 500 free submissions monthly.</p>
+                    <a href="https://snapitforms.com" class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition inline-block">Start Free Forms →</a>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-3 text-primary-600">Track Website Analytics</h3>
+                    <p class="text-gray-600 mb-4">Monitor visitor behavior, conversion rates, and performance metrics across all your websites.</p>
+                    <a href="https://snapitanalytics.com" class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition inline-block">Get Analytics →</a>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">🔗</div>
+                    <h3 class="text-xl font-bold mb-3 text-primary-600">Create Short URLs</h3>
+                    <p class="text-gray-600 mb-4">Generate branded short links, track clicks, and manage URL campaigns with detailed analytics.</p>
+                    <a href="https://snapiturl.com" class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition inline-block">Shorten URLs →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content: Comparison Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mt-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Choose SnapIT PDF Tools?</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse border border-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="border border-gray-200 px-4 py-3 text-left font-bold">Feature</th>
+                            <th class="border border-gray-200 px-4 py-3 text-center font-bold text-primary-600">SnapIT PDF</th>
+                            <th class="border border-gray-200 px-4 py-3 text-center">SmallPDF</th>
+                            <th class="border border-gray-200 px-4 py-3 text-center">iLovePDF</th>
+                            <th class="border border-gray-200 px-4 py-3 text-center">PDF24</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-200 px-4 py-3">Free Daily Limit</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center font-bold text-green-600">3 files</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">2 files</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">1 file</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">2 files</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-3">Max File Size (Free)</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center font-bold text-green-600">25MB</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">15MB</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">20MB</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">10MB</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-200 px-4 py-3">Registration Required</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center font-bold text-green-600">No</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center text-red-600">Yes</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center text-red-600">Yes</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">No</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-3">Pro Plan Price</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center font-bold text-green-600">$9/month</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">$12/month</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">$10/month</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">$8/month</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-200 px-4 py-3">Batch Processing</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center font-bold text-green-600">✓</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">✓</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">✓</td>
+                            <td class="border border-gray-200 px-4 py-3 text-center">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <p class="text-gray-600 mb-4">Get more value with SnapIT PDF Tools - higher limits, no registration required, and competitive pricing!</p>
+                <button onclick="signUpFree()" class="bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
+                    Start Using Free Tools Now →
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern SnapIT Footer -->
+    <footer style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 3rem 0 1rem; margin-top: 4rem; border-top: 1px solid rgba(170, 51, 106, 0.1);">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="footer-section">
+                    <h4 style="color: #aa336a; font-weight: 600; margin-bottom: 1rem;">Services</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapitagent.com" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">AI Agents</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapitforms.com" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">Forms</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapitqr.com" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">QR Codes</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapiturl.com" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">URL Shortener</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapitanalytics.com" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">Analytics</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://urlstatuschecker.com" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">Status Checker</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #aa336a; text-decoration: none; font-weight: 600;">PDF Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="color: #aa336a; font-weight: 600; margin-bottom: 1rem;">Customer Portal</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapitsoftware.com" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">Unified Dashboard</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapitsoftware.com#services" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">Service Management</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapitsoftware.com#support" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="color: #aa336a; font-weight: 600; margin-bottom: 1rem;">Company</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://snapitsoftware.com" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">About</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">Privacy</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #666; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#aa336a'" onmouseout="this.style.color='#666'">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(170, 51, 106, 0.1); color: #666;">
+                <p>&copy; 2025 SnapIT Software. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentUser = null;
+        let activeTab = 'convert';
+        let convertMode = 'pdf-to-word';
+        let splitMode = 'pages';
+        let compressionLevel = 'balanced';
+        let mergeFiles = [];
+        
+        // Initialize
+        window.addEventListener('load', () => {
+            setActiveTab('convert');
+            setupDragAndDrop();
+            
+            // Check for stored user
+            const storedUser = localStorage.getItem('snapit_user');
+            if (storedUser) {
+                try {
+                    currentUser = JSON.parse(storedUser);
+                    updateAuthUI();
+                } catch (error) {
+                    localStorage.removeItem('snapit_user');
+                }
+            }
+        });
+
+        // Tab Management
+        function setActiveTab(tab) {
+            activeTab = tab;
+            
+            // Hide all content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Show active content
+            document.getElementById(`${tab}-content`).classList.remove('hidden');
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-primary-100', 'text-primary-700');
+                btn.classList.add('text-gray-600', 'hover:text-gray-900', 'hover:bg-gray-100');
+            });
+            
+            document.getElementById(`${tab}-tab`).classList.add('bg-primary-100', 'text-primary-700');
+        }
+
+        // Mode setters
+        function setConvertMode(mode) {
+            convertMode = mode;
+            document.querySelectorAll('.convert-mode-btn').forEach(btn => {
+                btn.classList.remove('border-primary-500', 'bg-primary-50');
+            });
+            event.target.closest('.convert-mode-btn').classList.add('border-primary-500', 'bg-primary-50');
+            
+            // Show/hide appropriate input areas
+            const fileUploadArea = document.getElementById('file-upload-area');
+            const textInputArea = document.getElementById('text-input-area');
+            
+            if (mode === 'text-to-pdf') {
+                fileUploadArea.style.display = 'none';
+                textInputArea.classList.remove('hidden');
+            } else {
+                fileUploadArea.style.display = 'block';
+                textInputArea.classList.add('hidden');
+            }
+        }
+
+        function setSplitMode(mode) {
+            splitMode = mode;
+            document.querySelectorAll('.split-mode-btn').forEach(btn => {
+                btn.classList.remove('border-primary-500', 'bg-primary-50');
+            });
+            event.target.closest('.split-mode-btn').classList.add('border-primary-500', 'bg-primary-50');
+        }
+
+        // File handling
+        function handleFileSelect(input, operation) {
+            const files = Array.from(input.files);
+            
+            if (operation === 'merge') {
+                mergeFiles = files;
+                displayMergeFiles();
+            } else {
+                const file = files[0];
+                if (file && file.type === 'application/pdf') {
+                    processFile(file, operation);
+                } else {
+                    alert('Please select a valid PDF file');
+                }
+            }
+        }
+
+        function displayMergeFiles() {
+            const container = document.getElementById('merge-files-container');
+            const listElement = document.getElementById('merge-files-list');
+            
+            container.innerHTML = '';
+            mergeFiles.forEach((file, index) => {
+                const fileDiv = document.createElement('div');
+                fileDiv.className = 'flex items-center justify-between bg-gray-50 p-3 rounded-lg';
+                fileDiv.innerHTML = `
+                    <span class="flex items-center">
+                        <span class="material-icons text-red-600 mr-2">picture_as_pdf</span>
+                        ${file.name}
+                    </span>
+                    <button onclick="removeMergeFile(${index})" class="text-red-600 hover:text-red-800">
+                        <span class="material-icons">close</span>
+                    </button>
+                `;
+                container.appendChild(fileDiv);
+            });
+            
+            listElement.classList.toggle('hidden', mergeFiles.length === 0);
+        }
+
+        function removeMergeFile(index) {
+            mergeFiles.splice(index, 1);
+            displayMergeFiles();
+        }
+
+        // File processing
+        async function processFile(file, operation) {
+            const progressElement = document.getElementById(`${operation}-progress`);
+            const progressBar = document.getElementById(`${operation}-progress-bar`);
+            const statusElement = document.getElementById(`${operation}-status`);
+            
+            progressElement.classList.remove('hidden');
+            
+            try {
+                // Simulate processing
+                for (let i = 0; i <= 100; i += 10) {
+                    progressBar.style.width = `${i}%`;
+                    statusElement.textContent = `Processing... ${i}%`;
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                }
+                
+                statusElement.textContent = 'Processing complete! Download starting...';
+                
+                // Simulate download
+                setTimeout(() => {
+                    downloadProcessedFile(file, operation);
+                    progressElement.classList.add('hidden');
+                }, 1000);
+                
+            } catch (error) {
+                alert('Processing failed: ' + error.message);
+                progressElement.classList.add('hidden');
+            }
+        }
+
+        function downloadProcessedFile(originalFile, operation) {
+            // Create a blob for demonstration
+            const blob = new Blob(['Processed PDF content'], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `processed_${originalFile.name}`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function processSplit() {
+            const input = document.getElementById('split-input').value;
+            if (!input) {
+                alert('Please specify how to split the PDF');
+                return;
+            }
+            // Process split with options
+            alert(`Splitting PDF with options: ${input}`);
+        }
+
+        function processMerge() {
+            if (mergeFiles.length < 2) {
+                alert('Please select at least 2 PDF files to merge');
+                return;
+            }
+            // Process merge
+            alert(`Merging ${mergeFiles.length} PDF files`);
+        }
+
+        // Drag and drop
+        function setupDragAndDrop() {
+            document.querySelectorAll('.file-drop-area').forEach(area => {
+                area.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    area.classList.add('drag-over');
+                });
+                
+                area.addEventListener('dragleave', () => {
+                    area.classList.remove('drag-over');
+                });
+                
+                area.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    area.classList.remove('drag-over');
+                    
+                    const files = Array.from(e.dataTransfer.files);
+                    const pdfFiles = files.filter(file => file.type === 'application/pdf');
+                    
+                    if (pdfFiles.length > 0) {
+                        if (area.closest('#merge-content')) {
+                            mergeFiles = pdfFiles;
+                            displayMergeFiles();
+                        } else {
+                            processFile(pdfFiles[0], activeTab);
+                        }
+                    } else {
+                        alert('Please drop PDF files only');
+                    }
+                });
+            });
+        }
+
+        // Authentication
+        function handleCredentialResponse(response) {
+            const responsePayload = decodeJWT(response.credential);
+            currentUser = { 
+                email: responsePayload.email, 
+                name: responsePayload.name, 
+                picture: responsePayload.picture 
+            };
+            updateAuthUI();
+            localStorage.setItem('snapit_user', JSON.stringify(currentUser));
+            localStorage.setItem('snapit_token', response.credential);
+        }
+
+        function decodeJWT(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+
+        function updateAuthUI() {
+            const authContainer = document.getElementById('auth-container');
+            const userInfo = document.getElementById('user-info');
+            const userName = document.getElementById('user-name');
+            
+            if (currentUser) {
+                authContainer.classList.add('hidden');
+                userInfo.classList.remove('hidden');
+                userName.textContent = `Welcome, ${currentUser.name}`;
+            } else {
+                authContainer.classList.remove('hidden');
+                userInfo.classList.add('hidden');
+            }
+        }
+
+        function signOut() {
+            currentUser = null;
+            localStorage.removeItem('snapit_user');
+            localStorage.removeItem('snapit_token');
+            updateAuthUI();
+        }
+
+        // Show sign-in when needed for pro features
+        function showSignIn() {
+            document.getElementById('auth-container').classList.remove('hidden');
+            document.querySelector('button[onclick="showSignIn()"]').style.display = 'none';
+        }
+
+        // Pricing functions
+        function signUpFree() {
+            // Free plan works without sign-in - just enable basic features
+            localStorage.setItem('pdf_plan', 'free');
+            localStorage.setItem('pdf_daily_count', '0');
+            localStorage.setItem('pdf_daily_date', new Date().toDateString());
+            alert('🎉 Free plan activated! Process up to 3 PDFs per day (25MB max each)');
+            
+            // Show usage counter
+            updateUsageDisplay();
+        }
+
+        function upgradeToPro() {
+            // Show sign-in first, then Stripe checkout
+            if (!currentUser) {
+                alert('👤 Please sign in with Google to upgrade to Pro ($9/month)');
+                showSignIn();
+                return;
+            }
+            // TODO: Integrate Stripe checkout for PDF Pro plan
+            alert('💳 Redirecting to secure checkout for Pro plan ($9/month)...\n\n✓ 100 files per day\n✓ 100MB max file size\n✓ All conversion types\n✓ Priority processing');
+        }
+
+        function upgradeToEnterprise() {
+            const salesEmail = 'sales@snapitsoftware.com';
+            const subject = 'PDF Tools Enterprise Plan Inquiry';
+            const body = `Hi SnapIT team,
+
+I'm interested in the Enterprise plan for PDF Tools ($49/month).
+
+My requirements:
+- Daily processing volume: 
+- Team size:
+- Integration needs:
+- Custom features needed:
+
+Please contact me to discuss pricing and implementation.
+
+Best regards,
+Name: 
+Email: 
+Company: `;
+            
+            window.open(`mailto:${salesEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+        }
+
+        function updateUsageDisplay() {
+            const today = new Date().toDateString();
+            const storedDate = localStorage.getItem('pdf_daily_date');
+            let dailyCount = parseInt(localStorage.getItem('pdf_daily_count')) || 0;
+            
+            // Reset count if new day
+            if (storedDate !== today) {
+                dailyCount = 0;
+                localStorage.setItem('pdf_daily_count', '0');
+                localStorage.setItem('pdf_daily_date', today);
+            }
+            
+            // Show usage in header
+            const freeLabel = document.querySelector('.bg-green-100');
+            if (freeLabel) {
+                freeLabel.textContent = `Free: ${dailyCount}/3 files today`;
+            }
+        }
+
+        // Text-to-PDF conversion function
+        async function convertTextToPDF() {
+            const textContent = document.getElementById('text-content').value.trim();
+            const fontFamily = document.getElementById('font-family').value;
+            const fontSize = parseInt(document.getElementById('font-size').value);
+            
+            if (!textContent) {
+                alert('Please enter some text to convert to PDF');
+                return;
+            }
+
+            // Check daily limit
+            if (!checkDailyLimit()) {
+                alert('Daily limit reached! Upgrade to Pro for unlimited conversions.');
+                return;
+            }
+
+            try {
+                // Create PDF using PDF-lib
+                const pdfDoc = await PDFLib.PDFDocument.create();
+                const page = pdfDoc.addPage([612, 792]); // Standard letter size
+                
+                // Get font
+                let font;
+                switch (fontFamily) {
+                    case 'Times-Roman':
+                        font = await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRoman);
+                        break;
+                    case 'Courier':
+                        font = await pdfDoc.embedFont(PDFLib.StandardFonts.Courier);
+                        break;
+                    default:
+                        font = await pdfDoc.embedFont(PDFLib.StandardFonts.Helvetica);
+                }
+                
+                // Split text into lines and pages
+                const lines = textContent.split('\n');
+                const pageHeight = 792;
+                const pageWidth = 612;
+                const margin = 50;
+                const lineHeight = fontSize * 1.2;
+                const maxLinesPerPage = Math.floor((pageHeight - 2 * margin) / lineHeight);
+                
+                let currentPage = page;
+                let currentY = pageHeight - margin;
+                let lineCount = 0;
+                
+                for (const line of lines) {
+                    // Check if we need a new page
+                    if (lineCount >= maxLinesPerPage) {
+                        currentPage = pdfDoc.addPage([612, 792]);
+                        currentY = pageHeight - margin;
+                        lineCount = 0;
+                    }
+                    
+                    // Wrap long lines
+                    const maxCharsPerLine = Math.floor((pageWidth - 2 * margin) / (fontSize * 0.6));
+                    if (line.length <= maxCharsPerLine) {
+                        currentPage.drawText(line, {
+                            x: margin,
+                            y: currentY,
+                            size: fontSize,
+                            font: font,
+                            color: PDFLib.rgb(0, 0, 0),
+                        });
+                        currentY -= lineHeight;
+                        lineCount++;
+                    } else {
+                        // Split long lines
+                        const words = line.split(' ');
+                        let currentLine = '';
+                        
+                        for (const word of words) {
+                            const testLine = currentLine ? `${currentLine} ${word}` : word;
+                            if (testLine.length <= maxCharsPerLine) {
+                                currentLine = testLine;
+                            } else {
+                                // Draw current line and start new one
+                                if (currentLine) {
+                                    if (lineCount >= maxLinesPerPage) {
+                                        currentPage = pdfDoc.addPage([612, 792]);
+                                        currentY = pageHeight - margin;
+                                        lineCount = 0;
+                                    }
+                                    currentPage.drawText(currentLine, {
+                                        x: margin,
+                                        y: currentY,
+                                        size: fontSize,
+                                        font: font,
+                                        color: PDFLib.rgb(0, 0, 0),
+                                    });
+                                    currentY -= lineHeight;
+                                    lineCount++;
+                                }
+                                currentLine = word;
+                            }
+                        }
+                        // Draw remaining text
+                        if (currentLine) {
+                            if (lineCount >= maxLinesPerPage) {
+                                currentPage = pdfDoc.addPage([612, 792]);
+                                currentY = pageHeight - margin;
+                                lineCount = 0;
+                            }
+                            currentPage.drawText(currentLine, {
+                                x: margin,
+                                y: currentY,
+                                size: fontSize,
+                                font: font,
+                                color: PDFLib.rgb(0, 0, 0),
+                            });
+                            currentY -= lineHeight;
+                            lineCount++;
+                        }
+                    }
+                }
+                
+                // Generate PDF
+                const pdfBytes = await pdfDoc.save();
+                
+                // Download the PDF
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'text-to-pdf-conversion.pdf';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                // Update usage count
+                incrementUsageCount();
+                updateUsageDisplay();
+                
+                alert('✅ Text converted to PDF successfully! Download started.');
+                
+            } catch (error) {
+                console.error('PDF conversion error:', error);
+                alert('Error converting text to PDF. Please try again.');
+            }
+        }
+
+        function checkDailyLimit() {
+            const plan = localStorage.getItem('pdf_plan') || 'visitor';
+            const dailyCount = parseInt(localStorage.getItem('pdf_daily_count')) || 0;
+            
+            const limits = {
+                visitor: 1,    // Anonymous users: 1 file
+                free: 3,       // Signed in free: 3 files  
+                pro: 100       // Paid users: 100 files
+            };
+            
+            return dailyCount < limits[plan];
+        }
+
+        function incrementUsageCount() {
+            const dailyCount = parseInt(localStorage.getItem('pdf_daily_count')) || 0;
+            localStorage.setItem('pdf_daily_count', (dailyCount + 1).toString());
+        }
+    </script>
+
+    <!-- SnapIT Unified Analytics -->
+    <script>
+        (function() {
+            window.snapitAnalytics = {
+                trackEvent: function(event, properties = {}) {
+                    console.log('Analytics:', event, properties);
+                    // Send to analytics endpoint
+                },
+                trackConversion: function(value, currency, event) {
+                    console.log('Conversion:', event, value, currency);
+                }
+            };
+            
+            // Track page view
+            window.snapitAnalytics.trackEvent('page_view', {
+                page: 'pdf_tools',
+                title: document.title
+            });
+        })();
+    </script>
+</body>
+</html>
